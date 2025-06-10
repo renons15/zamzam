@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zangiota Zam-Zam • Санаторий здоровья</title>
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Zangiota Zam-Zam" height="140" />
+      </a>
+      <nav class="main-nav" id="nav">
+        <ul>
+          <li><a href="#about">О центре</a></li>
+          <li><a href="procedures.html">Процедуры</a></li>
+          <li><a href="#nutrition">Питание</a></li>
+          <li><a href="#water">Мин. воды</a></li>
+          <li><a href="#rooms">Номера</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#licenses">Лицензии</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <h1>Обретите здоровье<br/>в центре Zangiota Zam-Zam</h1>
+      <p>Натуральная термальная минеральная вода и лучшие процедуры для вашего благополучия.</p>
+      <a href="#about" class="btn btn-primary">Начать исцеление</a>
+    </div>
+  </section>
+
+  <!-- FLOATING CONTACT -->
+  <div class="floating-contact">
+    <a href="https://wa.me/998988071896" class="btn-icon whatsapp" target="_blank" aria-label="WhatsApp"></a>
+    <a href="https://t.me/zamzam_uz" class="btn-icon telegram" target="_blank" aria-label="Telegram"></a>
+  </div>
+
+  <!-- FEATURES PREVIEW -->
+  <section class="features">
+    <div class="container grid-4">
+      <div class="feature-item">
+        <img src="images/icon-spa.svg" alt="Spa" />
+        <h3>Процедуры</h3>
+      </div>
+      <div class="feature-item">
+        <img src="images/icon-nutrition.svg" alt="Nutrition" />
+        <h3>Питание</h3>
+      </div>
+      <div class="feature-item">
+        <img src="images/icon-water.svg" alt="Mineral Water" />
+        <h3>Мин. воды</h3>
+      </div>
+      <div class="feature-item">
+        <img src="images/icon-rooms.svg" alt="Rooms" />
+        <h3>Номера</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container grid-2">
+      <div class="about-text fade-in">
+        <h2>О центре</h2>
+        <p>
+          Санаторий «Zangiota Zam-Zam» расположен в уникальной климатической зоне…
+          Наш источник глубиной 350 м дарит целебную воду, богатую минералами.
+        </p>
+        <p>
+          История центра началась в 1985 году, когда были пробурены первые скважины…
+        </p>
+      </div>
+      <div class="about-img fade-in">
+        <img src="images/about-1.jpg" alt="Территория санатория" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCEDURES -->
+  <section class="procedures" id="procedures">
+    <div class="container">
+      <h2>Процедуры и лечения</h2>
+      <ul class="procedures-list fade-in">
+        <li>Ингаляции с минеральной водой</li>
+        <li>Массаж (классический, лимфодренажный)</li>
+        <li>Термальные ванны и обертывания</li>
+        <li>Физиотерапевтические методы</li>
+        <li>Консультация врача-специалиста</li>
+      </ul>
+      <a href="#contact" class="btn btn-secondary">Записаться на консультацию</a>
+    </div>
+  </section>
+
+  <!-- MINERAL WATER -->
+  <section class="water" id="water">
+    <div class="container grid-2">
+      <div class="water-img fade-in">
+        <img src="images/source.jpg" alt="Источник минеральной воды" />
+      </div>
+      <div class="water-text fade-in">
+        <h2>Минеральная вода</h2>
+        <p>Глубокий источник № 7 ПР, 350 м. содержит:</p>
+        <ul class="mineral-list">
+          <li>Кальций (Ca²⁺)</li>
+          <li>Магний (Mg²⁺)</li>
+          <li>Натрий (Na⁺)</li>
+          <li>Бикарбонаты (HCO₃⁻)</li>
+          <li>Сульфаты (SO₄²⁻)</li>
+        </ul>
+        <p>Полезно при заболеваниях ЖКТ, опорно-двигательного аппарата и кожных проблемах.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="rooms" id="rooms">
+    <div class="container">
+      <h2>Номера и условия</h2>
+      <div class="grid-3 fade-in">
+        <div class="room-item">
+          <img src="images/room1.jpg" alt="Двухместный номер" />
+          <h4>Стандартный</h4>
+          <p>Уютный двухместный номер с видом на горы.</p>
+        </div>
+        <div class="room-item">
+          <img src="images/room2.jpg" alt="Люкс" />
+          <h4>Люкс</h4>
+          <p>Просторный номер с гостиной зоной и балконом.</p>
+        </div>
+        <div class="room-item">
+          <img src="images/room3.jpg" alt="Семейный номер" />
+          <h4>Семейный</h4>
+          <p>Две комнаты, идеально для отдыха с детьми.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUTRITION -->
+  <section class="nutrition" id="nutrition">
+    <div class="container grid-2">
+      <div class="nutrition-text fade-in">
+        <h2>Питание</h2>
+        <p>Сбалансированные лечебные диеты, разработанные диетологом:</p>
+        <ul>
+          <li>Вегетарианская программа</li>
+          <li>Богатая белками диета</li>
+          <li>Диета для восстановления ЖКТ</li>
+        </ul>
+      </div>
+      <div class="nutrition-img fade-in">
+        <img src="images/menu.jpg" alt="Пример меню" />
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2>Отзывы гостей</h2>
+      <div class="grid-2 fade-in">
+        <blockquote>
+          «Невероятный отдых и польза для здоровья!»<br/>
+          <cite>— Иван Петров</cite>
+        </blockquote>
+        <blockquote>
+          «Вода здесь словно эликсир молодости.»<br/>
+          <cite>— Мария К.»</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container grid-2">
+      <form action="#" class="contact-form fade-in">
+        <h2>Связаться с нами</h2>
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Сообщение" required></textarea>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+      </form>
+      <div class="contact-info fade-in">
+        <h3>Телефоны</h3>
+        <p>+998 98 307 18 96 (Узб.)<br/>+998 90 982 98 71 (иностр.)</p>
+        <h3>Адрес</h3>
+        <p>Ташкентская обл., Зангиатинский р-н, пгт Уртааул, ул. Навои, 70</p>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d764.4086447949134!2d69.15596986703353!3d41.179683604930894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae639afc7d96e9%3A0x69b8190cb7744de0!2sZangiota%20Zam-Zam%20MCHJ!5e1!3m2!1sen!2sde!4v1749526645337!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Zangiota Zam-Zam — все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Nav & Scroll Fade Script -->
+  <script src="script.js"></script>
+</body>
+</html>
