@@ -174,7 +174,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    background: rgba(0, 0, 0, 0.35); /* dark overlay */
     backdrop-filter: blur(3px);    /* subtle blur effect */
     -webkit-backdrop-filter: blur(3px);
   }
@@ -447,4 +447,32 @@
 }
 .procedures-desc .procedures-list li {
   margin: 0.5rem 0;
+}
+
+/* === Hero-like Parallax for Procedures === */
+.procedures-parallax {
+  background: url('images/procedures-bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  will-change: background-position;
+  color: var(--clr-light);
+  text-align: center;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.procedures-parallax::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.12); /* match hero overlay */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* keep text above the overlay */
+.procedures-parallax .container {
+  position: relative;
+  z-index: 1;      /* lifts text/button above the blur */
+  color: var(--clr-light);  /* white text like Hero */
 }

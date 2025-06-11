@@ -19,10 +19,11 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Parallax effect on hero background
-const hero = document.querySelector('.hero');
+// Parallax effect on all elements with .parallax class
+const parallaxes = document.querySelectorAll('.parallax');
 window.addEventListener('scroll', () => {
   const offset = window.pageYOffset;
-  // adjust multiplier (0.2) for speed
-  hero.style.backgroundPositionY = `${offset * 0.1}px`;
+  parallaxes.forEach(el => {
+    el.style.backgroundPositionY = `${offset * 0.5}px`;
+  });
 });
