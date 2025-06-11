@@ -221,26 +221,45 @@
   /* === Floating Contact Buttons === */
   .floating-contact {
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    z-index: 100;
   }
   
   .btn-icon {
-    width: 48px;
-    height: 48px;
-    display: block;
-    background-size: cover;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0,90,167,0.10);
+    transition: transform 0.22s, box-shadow 0.22s;
+    border: 2.5px solid var(--clr-primary);
+    background-size: 62%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   
+  .btn-icon:hover {
+    transform: scale(1.09);
+    box-shadow: 0 6px 18px rgba(0,178,221,0.22);
+    background-color: #f1faff;
+  }
+  
+  /* Use only the icons (no text in image) */
   .whatsapp {
-    background-image: url('images/whatsapp.svg');
+    background-image: url('images/whatsapp.svg'); /* SVG or PNG, icon only! */
+    border-color: #25d366;
   }
   
   .telegram {
-    background-image: url('images/telegram.svg');
+    background-image: url('images/telegram.svg'); /* SVG or PNG, icon only! */
+    border-color: #229ed9;
   }
   
   /* === Sections Titles === */
