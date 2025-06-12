@@ -1,29 +1,29 @@
-// Mobile nav toggle
-const nav = document.getElementById("nav");
-const navToggle = document.getElementById("navToggle");
-navToggle.addEventListener("click", () => {
-  nav.classList.toggle("open");
-});
-
-// Simple scroll-fade trigger
-const faders = document.querySelectorAll(".fade-in");
-const options = { threshold: 0.2 };
-
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.style.animationDelay = "0.2s";
-    observer.unobserve(entry.target);
-  });
-}, options);
-
-faders.forEach((fader) => appearOnScroll.observe(fader));
-
-// Parallax effect on all elements with .parallax class
-const parallaxes = document.querySelectorAll(".parallax");
-window.addEventListener("scroll", () => {
-  const offset = window.pageYOffset;
-  parallaxes.forEach((el) => {
-    el.style.backgroundPositionY = `${offset * -0.3}px`;
-  });
-});
+.proc-toggle {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--sp-sm) var(--sp-md);
+  font-weight: 600;
+  background: var(--clr-secondary);
+  color: var(--clr-light);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  position: relative;
+}
+.proc-toggle:hover {
+  background: var(--clr-primary);
+  transform: translateY(-1px);
+}
+.proc-toggle:focus-visible {
+  outline: 3px solid var(--clr-light);
+  outline-offset: 2px;
+}
+.proc-toggle::after {
+  content: "▾";
+  font-size: 1rem;
+  margin-left: auto;
+  transition: transform 0.25s;
+}
