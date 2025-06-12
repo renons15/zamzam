@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Санаторий Zangiota Zam-Zam — натуральная термальная минеральная вода и лечебные процедуры для вашего благополучия.">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:title" content="Zangiota Zam-Zam • Санаторий здоровья">
+    <meta property="og:description" content="Санаторий Zangiota Zam-Zam — натуральная термальная минеральная вода и лечебные процедуры для вашего благополучия.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:type" content="website">
     <title>Zangiota Zam-Zam • Санаторий здоровья</title>
 
     <!-- Google Font -->
@@ -15,11 +22,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a class="skip-link visually-hidden" href="#main">Пропустить к содержанию</a>
     <!-- HEADER -->
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="logo">
-          <img src="images/logo.webp" alt="Zangiota Zam-Zam" height="140" />
+          <img src="images/logo.webp" alt="Zangiota Zam-Zam" height="140" loading="lazy" />
         </a>
         <nav class="main-nav" id="nav">
           <ul>
@@ -29,10 +37,11 @@
             <li><a href="#contact">Контакты</a></li>
           </ul>
         </nav>
-        <button class="nav-toggle" id="navToggle">☰</button>
+        <button class="nav-toggle" id="navToggle" aria-controls="nav" aria-expanded="false">☰</button>
       </div>
     </header>
 
+    <main id="main">
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="container hero-inner">
@@ -64,23 +73,33 @@
 
     <!-- FEATURES PREVIEW -->
     <section class="features">
-      <div class="container grid-4">
-        <a href="procedures.html" class="feature-item">
-          <img src="images/spa.png" alt="Spa" />
-          <h3>Процедуры</h3>
-        </a>
-        <a href="nutrition.html" class="feature-item">
-          <img src="images/nutrition.png" alt="Nutrition" />
-          <h3>Питание</h3>
-        </a>
-        <a href="water.html" class="feature-item">
-          <img src="images/water.png" alt="Mineral Water" />
-          <h3>Мин. воды</h3>
-        </a>
-        <a href="rooms.html" class="feature-item">
-          <img src="images/rooms.png" alt="Rooms" />
-          <h3>Номера</h3>
-        </a>
+      <div class="container">
+        <ul class="features-list grid-4">
+          <li class="feature-item">
+            <a href="procedures.html">
+              <img src="images/spa.png" alt="Spa" loading="lazy" />
+              <h3>Процедуры</h3>
+            </a>
+          </li>
+          <li class="feature-item">
+            <a href="nutrition.html">
+              <img src="images/nutrition.png" alt="Nutrition" loading="lazy" />
+              <h3>Питание</h3>
+            </a>
+          </li>
+          <li class="feature-item">
+            <a href="water.html">
+              <img src="images/water.png" alt="Mineral Water" loading="lazy" />
+              <h3>Мин. воды</h3>
+            </a>
+          </li>
+          <li class="feature-item">
+            <a href="rooms.html">
+              <img src="images/rooms.png" alt="Rooms" loading="lazy" />
+              <h3>Номера</h3>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -100,7 +119,7 @@
           </p>
         </div>
         <div class="about-img fade-in">
-          <img src="images/about-1.jpg" alt="Территория санатория" />
+          <img src="images/about-1.jpg" alt="Территория санатория" loading="lazy" />
         </div>
       </div>
     </section>
@@ -126,7 +145,7 @@
     <section class="water" id="water">
       <div class="container grid-2">
         <div class="water-img fade-in">
-          <img src="images/source.jpg" alt="Источник минеральной воды" />
+          <img src="images/source.jpg" alt="Источник минеральной воды" loading="lazy" />
         </div>
         <div class="water-text fade-in">
           <h2>Минеральная вода</h2>
@@ -152,17 +171,17 @@
         <h2>Номера и условия</h2>
         <div class="grid-3 fade-in">
           <div class="room-item">
-            <img src="images/room1.jpg" alt="Двухместный номер" />
+            <img src="images/room1.jpg" alt="Двухместный номер" loading="lazy" />
             <h4>Стандартный</h4>
             <p>Уютный двухместный номер с видом на горы.</p>
           </div>
           <div class="room-item">
-            <img src="images/room2.jpg" alt="Люкс" />
+            <img src="images/room2.jpg" alt="Люкс" loading="lazy" />
             <h4>Люкс</h4>
             <p>Просторный номер с гостиной зоной и балконом.</p>
           </div>
           <div class="room-item">
-            <img src="images/room3.jpg" alt="Семейный номер" />
+            <img src="images/room3.jpg" alt="Семейный номер" loading="lazy" />
             <h4>Семейный</h4>
             <p>Две комнаты, идеально для отдыха с детьми.</p>
           </div>
@@ -183,7 +202,7 @@
           </ul>
         </div>
         <div class="nutrition-img fade-in">
-          <img src="images/menu.jpg" alt="Пример меню" />
+          <img src="images/menu.jpg" alt="Пример меню" loading="lazy" />
         </div>
       </div>
     </section>
@@ -210,14 +229,18 @@
       <div class="container grid-2">
         <form action="#" class="contact-form fade-in">
           <h2>Связаться с нами</h2>
-          <input type="text" placeholder="Ваше имя" required />
+           <input type="text" placeholder="Ваше имя" required />
+          <input type="tel" name="phone" placeholder="Телефон*" pattern="\\+?[0-9\\s()-]{7,}" required />
           <input type="email" placeholder="Email" required />
           <textarea placeholder="Сообщение" required></textarea>
           <button type="submit" class="btn btn-primary">Отправить</button>
         </form>
         <div class="contact-info fade-in">
           <h3>Телефоны</h3>
-          <p>+998 98 307 18 96 (Узб.)<br />+998 90 982 98 71 (иностр.)</p>
+          <p>
+            <a href="tel:+998983071896">+998 98 307 18 96</a> (Узб.)<br />
+            <a href="tel:+998909829871">+998 90 982 98 71</a> (иностр.)
+          </p>
           <h3>Адрес</h3>
           <p>Ташкентская обл., Зангиатинский р-н, пгт Уртааул, ул. Навои, 70</p>
           <div class="map">
@@ -234,6 +257,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -243,6 +267,6 @@
     </footer>
 
     <!-- Mobile Nav & Scroll Fade Script -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
