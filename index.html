@@ -60,7 +60,7 @@
           <p>
             Натуральная термальная минеральная вода и лучшие процедуры для вашего благополучия.
           </p>
-          <a href="#about" class="btn btn-primary">Начать исцеление</a>
+
         </div>
       </section>
 
@@ -130,10 +130,10 @@
           <div class="about-text fade-in">
             <h2 id="about-title">О центре</h2>
             <p>
-              Санаторий «Zangiota Zam-Zam» расположен в уникальной климатической зоне… Наш источник глубиной 350 м дарит целебную воду, богатую минералами.
+              Санаторий «Zangiota Zam-Zam» — это современный центр здоровья, где природные ресурсы и минеральная вода сочетаются с эффективными методами лечения. 
             </p>
             <p>
-              История центра началась в 1985 году, когда были пробурены первые скважины…
+              Мы предлагаем бальнеологические и физиотерапевтические процедуры, рациональное питание и комфортные условия проживания. Здесь каждый гость находит не только отдых, но и заботу о здоровье.
             </p>
           </div>
           <div class="about-img fade-in">
@@ -145,20 +145,7 @@
         </div>
       </section>
 
-      <!-- PROCEDURES -->
-      <section class="procedures procedures-parallax parallax" id="procedures" aria-labelledby="procedures-title">
-        <div class="container">
-          <h2 id="procedures-title">Процедуры и лечения</h2>
-          <ul class="procedures-list fade-in">
-            <li>Ингаляции с минеральной водой</li>
-            <li>Массаж (классический, лимфодренажный)</li>
-            <li>Термальные ванны и обертывания</li>
-            <li>Физиотерапевтические методы</li>
-            <li>Консультация врача-специалиста</li>
-          </ul>
-          <a href="#contact" class="btn btn-secondary">Записаться на консультацию</a>
-        </div>
-      </section>
+      
 
       <!-- MINERAL WATER -->
       <section class="water" id="water" aria-labelledby="water-title">
@@ -241,18 +228,133 @@
       </section>
 
       <!-- REVIEWS -->
-      <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+      <section class="reviews reviews-parallax parallax" id="reviews" aria-labelledby="reviews-title">
         <div class="container">
           <h2 id="reviews-title">Отзывы гостей</h2>
-          <div class="grid-2 fade-in">
-            <blockquote>
-              «Невероятный отдых и польза для здоровья!»<br />
-              <cite>— Иван Петров</cite>
-            </blockquote>
-            <blockquote>
-              «Вода здесь словно эликсир молодости.»<br />
-              <cite>— Мария К.»</cite>
-            </blockquote>
+          <div class="reviews-carousel fade-in" role="region" aria-roledescription="carousel" aria-label="Отзывы гостей" aria-live="off">
+            <div class="carousel-track" id="reviewsTrack">
+              <!-- Slide 1 -->
+              <div class="review-slide" data-index="0">
+                <article class="review-card" tabindex="-1">
+                  <header class="review-header">
+                    <div class="avatar" aria-hidden="true">ИП</div>
+                    <div class="meta">
+                      <div class="name-city">Иван П., Ташкент <span class="badge-verified" title="Проверенный отзыв" aria-label="Проверенный отзыв">✔</span></div>
+                      <div class="date">12.04.2025</div>
+                    </div>
+                  </header>
+                  <div class="stars" aria-label="Оценка: 5 из 5" title="Оценка: 5 из 5"><span>★★★★★</span></div>
+                  <p class="highlight">Невероятный отдых и заметное улучшение самочувствия уже через пару дней!</p>
+                  <button class="link-toggle" data-expand-target="#r1-full" aria-expanded="false" aria-controls="r1-full" data-collapsed-text="Читать полностью" data-expanded-text="Свернуть">Читать полностью</button>
+                  <div id="r1-full" class="fulltext" hidden>
+                    <p>Отличная организация, внимательный персонал и очень уютная территория. Процедуры подобрали индивидуально, эффект ощутил быстро.</p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 2 (with video) -->
+              <div class="review-slide" data-index="1">
+                <article class="review-card has-video" tabindex="-1">
+                  <header class="review-header">
+                    <div class="avatar" aria-hidden="true">МК</div>
+                    <div class="meta">
+                      <div class="name-city">Мария К., Самарканд</div>
+                      <div class="date">03.03.2025</div>
+                    </div>
+                    <span class="video-badge" title="Есть видео" aria-label="Есть видео">▶</span>
+                  </header>
+                  <div class="stars" aria-label="Оценка: 5 из 5" title="Оценка: 5 из 5"><span>★★★★★</span></div>
+                  <p class="highlight">Вода — словно эликсир молодости. Сон и кожа стали лучше.</p>
+                  <button class="link-toggle" data-expand-target="#r2-full" aria-expanded="false" aria-controls="r2-full" data-collapsed-text="Читать полностью" data-expanded-text="Свернуть">Читать полностью</button>
+                  <div id="r2-full" class="fulltext" hidden>
+                    <p>Особенно понравились ванны и ингаляции. Питание сбалансированное, меню разнообразное, сервис на уровне.</p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="review-slide" data-index="2">
+                <article class="review-card" tabindex="-1">
+                  <header class="review-header">
+                    <div class="avatar" aria-hidden="true">АЗ</div>
+                    <div class="meta">
+                      <div class="name-city">Анвар З., Бухара <span class="badge-verified" title="Проверенный отзыв" aria-label="Проверенный отзыв">✔</span></div>
+                      <div class="date">18.02.2025</div>
+                    </div>
+                  </header>
+                  <div class="stars" aria-label="Оценка: 4 из 5" title="Оценка: 4 из 5"><span>★★★★☆</span></div>
+                  <p class="highlight">Очень достойная физиотерапия и внимательные врачи.</p>
+                  <button class="link-toggle" data-expand-target="#r3-full" aria-expanded="false" aria-controls="r3-full" data-collapsed-text="Читать полностью" data-expanded-text="Свернуть">Читать полностью</button>
+                  <div id="r3-full" class="fulltext" hidden>
+                    <p>Приехал с болью в спине, через неделю стало гораздо лучше. Номер чистый, тихо, территория зелёная.</p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="review-slide" data-index="3">
+                <article class="review-card" tabindex="-1">
+                  <header class="review-header">
+                    <div class="avatar" aria-hidden="true">ДМ</div>
+                    <div class="meta">
+                      <div class="name-city">Дилшод М., Ташкент</div>
+                      <div class="date">27.01.2025</div>
+                    </div>
+                  </header>
+                  <div class="stars" aria-label="Оценка: 5 из 5" title="Оценка: 5 из 5"><span>★★★★★</span></div>
+                  <p class="highlight">Сервис, питание и процедуры — на высоком уровне.</p>
+                  <button class="link-toggle" data-expand-target="#r4-full" aria-expanded="false" aria-controls="r4-full" data-collapsed-text="Читать полностью" data-expanded-text="Свернуть">Читать полностью</button>
+                  <div id="r4-full" class="fulltext" hidden>
+                    <p>Отдельная благодарность медицинскому персоналу за профессионализм и участие. Вернусь ещё.</p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="review-slide" data-index="4">
+                <article class="review-card" tabindex="-1">
+                  <header class="review-header">
+                    <div class="avatar" aria-hidden="true">ЗХ</div>
+                    <div class="meta">
+                      <div class="name-city">Зульфия Х., Нукус</div>
+                      <div class="date">10.01.2025</div>
+                    </div>
+                  </header>
+                  <div class="stars" aria-label="Оценка: 5 из 5" title="Оценка: 5 из 5"><span>★★★★★</span></div>
+                  <p class="highlight">Территория — как парк, воздух чистый. Спокойствие и отдых.</p>
+                  <button class="link-toggle" data-expand-target="#r5-full" aria-expanded="false" aria-controls="r5-full" data-collapsed-text="Читать полностью" data-expanded-text="Свернуть">Читать полностью</button>
+                  <div id="r5-full" class="fulltext" hidden>
+                    <p>Для меня важно было перезагрузиться. Здесь это удалось: тишина, процедуры и внимательное отношение.</p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="review-slide" data-index="5">
+                <article class="review-card" tabindex="-1">
+                  <header class="review-header">
+                    <div class="avatar" aria-hidden="true">СК</div>
+                    <div class="meta">
+                      <div class="name-city">Светлана К., Фергана</div>
+                      <div class="date">22.12.2024</div>
+                    </div>
+                  </header>
+                  <div class="stars" aria-label="Оценка: 4 из 5" title="Оценка: 4 из 5"><span>★★★★☆</span></div>
+                  <p class="highlight">Хорошие номера и тёплый бассейн. Вернулась обновлённой.</p>
+                  <button class="link-toggle" data-expand-target="#r6-full" aria-expanded="false" aria-controls="r6-full" data-collapsed-text="Читать полностью" data-expanded-text="Свернуть">Читать полностью</button>
+                  <div id="r6-full" class="fulltext" hidden>
+                    <p>Понравилась организация питания и лечебные ванны. Отдельно отмечу чистоту и порядок в корпусах.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="carousel-nav">
+              <button class="carousel-btn prev" type="button" aria-label="Предыдущий отзыв">❮</button>
+              <button class="carousel-btn next" type="button" aria-label="Следующий отзыв">❯</button>
+            </div>
+            <div class="carousel-dots" id="reviewsDots" aria-hidden="true"></div>
           </div>
         </div>
       </section>

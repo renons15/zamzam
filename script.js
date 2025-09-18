@@ -40,4 +40,105 @@
       // Optionally inform user silently; bots will be blocked anyway
     }
   });
+
+  // Expand/collapse toggles for long content
+  const onToggleClick = (btn) => {
+    const targetSel = btn.getAttribute('data-expand-target');
+    if (!targetSel) return;
+    const panel = document.querySelector(targetSel);
+    if (!panel) return;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const next = !expanded;
+    btn.setAttribute('aria-expanded', String(next));
+    const collapsedText = btn.getAttribute('data-collapsed-text') || 'Подробнее';
+    const expandedText = btn.getAttribute('data-expanded-text') || 'Свернуть';
+    btn.textContent = next ? expandedText : collapsedText;
+    if (next) panel.removeAttribute('hidden');
+    else panel.setAttribute('hidden', '');
+  };
+
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!target) return;
+    const btn = target.closest && target.closest('[data-expand-target]');
+    if (!btn) return;
+    e.preventDefault();
+    onToggleClick(btn);
+  });
+
+  // Reviews carousel (vanilla)
+  const carousel = document.querySelector('.reviews-carousel');
+  if (carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.review-slide'));
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    const dotsWrap = carousel.querySelector('#reviewsDots');
+
+    let index = 0;
+    let autoTimer = null;
+    const AUTO_MS = 5000;
+    const setIndex = (i) => {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      updateDots();
+      slides.forEach((s, idx) => s.querySelector('.review-card')?.setAttribute('tabindex', idx === index ? '0' : '-1'));
+    };
+
+    const makeDots = () => {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', `Перейти к отзыву ${i + 1}`);
+        b.addEventListener('click', () => setIndex(i));
+        dotsWrap.appendChild(b);
+      });
+    };
+
+    const updateDots = () => {
+      if (!dotsWrap) return;
+      const bs = Array.from(dotsWrap.querySelectorAll('button'));
+      bs.forEach((b, i) => b.setAttribute('aria-current', i === index ? 'true' : 'false'));
+    };
+
+    const startAuto = () => {
+      stopAuto();
+      autoTimer = window.setInterval(() => setIndex(index + 1), AUTO_MS);
+    };
+    const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+
+    // Buttons
+    prevBtn && prevBtn.addEventListener('click', () => { setIndex(index - 1); startAuto(); });
+    nextBtn && nextBtn.addEventListener('click', () => { setIndex(index + 1); startAuto(); });
+
+    // Pause on hover/focus
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+    carousel.addEventListener('focusin', stopAuto);
+    carousel.addEventListener('focusout', startAuto);
+
+    // Touch & pointer swipe
+    let startX = 0; let touching = false;
+    const threshold = 40;
+    const start = (x) => { touching = true; startX = x; };
+    const end = (x) => {
+      if (!touching) return;
+      const dx = x - startX;
+      if (Math.abs(dx) > threshold) {
+        if (dx < 0) setIndex(index + 1); else setIndex(index - 1);
+        startAuto();
+      }
+      touching = false;
+    };
+    carousel.addEventListener('touchstart', (e) => start(e.touches[0].clientX), { passive: true });
+    carousel.addEventListener('touchend', (e) => end(e.changedTouches[0].clientX));
+    carousel.addEventListener('pointerdown', (e) => start(e.clientX));
+    window.addEventListener('pointerup', (e) => end(e.clientX));
+
+    makeDots();
+    setIndex(0);
+    startAuto();
+  }
 })();

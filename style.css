@@ -1,12 +1,12 @@
-/* Основные переменные и сброс */
+/* Base variables and reset */
 :root {
-  --clr-primary: #005aa7; /* главный синий оттенок */
-  --clr-secondary: #00b2dd; /* яркий акцент */
-  --clr-accent: #b3e5fc; /* оттенок для фокуса */
+  --clr-primary: #005aa7; /* primary blue tone */
+  --clr-secondary: #00b2dd; /* bright accent */
+  --clr-accent: #b3e5fc; /* focus highlight */
   --clr-light: #ffffff;
-  --clr-muted: #f3f7fb; /* светлый фон */
-  --clr-border: #dbe5f1; /* мягкая граница */
-  --clr-dark: #1e2e4a; /* цвет основного текста */
+  --clr-muted: #f3f7fb; /* light background */
+  --clr-border: #dbe5f1; /* soft border */
+  --clr-dark: #1e2e4a; /* main text color */
   --ff-base: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --sp-xs: 0.5rem;
   --sp-sm: 1rem;
@@ -56,7 +56,7 @@ img, picture { max-width: 100%; display: block; }
   background: var(--clr-dark); color: var(--clr-light); border-radius: var(--radius-sm);
 }
 
-/* Контейнеры и сетки */
+/* Containers and grids */
 .container { width: min(92%, 1200px); margin-inline: auto; }
 
 .grid-2, .grid-3, .grid-4 { display: grid; gap: var(--sp-md); }
@@ -70,9 +70,9 @@ img, picture { max-width: 100%; display: block; }
   .grid-4 { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* Шапка и меню */
+/* Header and navigation */
 .site-header {
-  /* Фиксируем шапку, чтобы всё выглядело аккуратно */
+  /* Sticky header for a tidy look */
   position: sticky; top: 0; z-index: 100;
   box-shadow: var(--shadow-sm);
   border-bottom: 1px solid var(--clr-border);
@@ -82,10 +82,10 @@ img, picture { max-width: 100%; display: block; }
   transform: translateZ(0);
   will-change: transform;
 }
-/* Логотип плавно меняет размер */
+/* Logo smoothly resizes */
 .header-inner { display: flex; align-items: center; gap: 2rem; min-height: var(--header-h); padding: 0 var(--sp-md); }
 .logo img { height: 96px; width: auto; transition: transform var(--transition); will-change: transform; transform-origin: left center; }
-/* Пока не прокрутили, логотип крупнее */
+/* Larger logo before scrolling */
 .site-header:not(.scrolled) .logo img { transform: scale(1.45); }
 
 .main-nav { margin-left: auto; }
@@ -103,11 +103,11 @@ img, picture { max-width: 100%; display: block; }
 .main-nav a.active { color: var(--clr-primary); }
 .main-nav a.active::after { transform: scaleX(1); }
 
-/* Мобильное меню */
+/* Mobile navigation */
 .nav-toggle { display: none; font-size: 1.75rem; background: none; border: none; color: var(--clr-dark); }
 @media (max-width: 767px) {
   html { scroll-padding-top: 64px; }
-  /* Держим логотип компактным на телефонах */
+  /* Keep the logo compact on phones */
   .logo img { height: 64px; }
   .nav-toggle { display: block; cursor: pointer; }
   .main-nav { position: absolute; inset: auto 0 0 0; top: 72px; background: var(--clr-light);
@@ -117,10 +117,10 @@ img, picture { max-width: 100%; display: block; }
   .main-nav ul { flex-direction: column; padding: var(--sp-sm); }
 }
 
-/* Первый экран */
+/* Hero section */
 .hero {
   background: url("images/hero-bg.jpg") center/cover no-repeat;
-  /* Scroll даёт более плавный старт */
+  /* Scroll provides a smoother start */
   background-attachment: scroll;
   color: var(--clr-light);
   text-align: center;
@@ -132,12 +132,12 @@ img, picture { max-width: 100%; display: block; }
 .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.2; margin-bottom: .75rem; }
 .hero p { font-size: clamp(1rem, 2.2vw, 1.15rem); margin-bottom: 1.5rem; opacity: .95; }
 
-/* На телефонах без fixed, так проще */
+/* On phones, avoid fixed for simplicity */
 @media (max-width: 768px) {
   .hero { background-attachment: scroll; }
 }
 
-/* Кнопки */
+/* Buttons */
 .btn { display: inline-block; font-weight: 700; padding: .75rem 1.25rem; border-radius: var(--radius-sm);
   text-decoration: none; transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
 }
@@ -147,7 +147,7 @@ img, picture { max-width: 100%; display: block; }
 .btn:active { transform: translateY(0); opacity: .9; }
 .btn:focus-visible { outline: 3px solid var(--clr-accent); outline-offset: 2px; }
 
-/* Плавающие кнопки связи */
+/* Floating contact buttons */
 .floating-contact { position: fixed; right: 1.25rem; bottom: 1.25rem; display: flex; flex-direction: column; gap: .9rem; z-index: 120; }
 .btn-icon {
   width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: #fff;
@@ -158,10 +158,10 @@ img, picture { max-width: 100%; display: block; }
 .whatsapp { background-image: url("images/whatsapp.svg"); border-color: #25d366; }
 .telegram { background-image: url("images/telegram.svg"); border-color: #229ed9; }
 
-/* Заголовки секций */
+/* Section headings */
 h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var(--sp-md); color: var(--clr-primary); }
 
-/* Быстрые ссылки по разделам */
+/* Quick section links */
 .features { padding: var(--sp-lg) 0; }
 .features-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-md); }
 .feature-item { text-align: center; padding: 1rem; border-radius: var(--radius-md); transition: transform var(--transition), box-shadow var(--transition); }
@@ -170,36 +170,95 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
 .feature-item h3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
 .feature-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
 
-/* Общие отступы секций */
+/* Common section spacing */
 .about, .water, .nutrition, .rooms, .contact, .licenses { padding: var(--sp-lg) 0; align-items: center; }
 
 .about-img img, .water-img img, .nutrition-img img { border-radius: var(--radius-md); }
 
-/* Список минералов */
+/* Mineral list */
 .mineral-list { list-style: disc inside; margin-top: .75rem; }
 
-/* Процедуры */
-.procedures { background: var(--clr-muted); padding: var(--sp-lg) 0; text-align: center; }
+/* Procedures */
+/* .procedures removed (section no longer used) */
 .procedures-list { list-style: none; margin: 0 0 var(--sp-md); padding: 0; }
 .procedures-list li { margin: .45rem 0; }
 
-/* Номера */
+/* Rooms */
 .room-item { overflow: hidden; border-radius: var(--radius-md); transition: transform var(--transition), box-shadow var(--transition); background: #fff; }
 .room-item img { width: 100%; }
 .room-item h4 { margin: .75rem 1rem 0; font-size: 1.05rem; }
 .room-item p { margin: .4rem 1rem 1rem; font-size: .95rem; color: #30413d; }
 .room-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
 
-/* Отзывы */
+/* Reviews */
 .reviews { background: var(--clr-muted); padding: var(--sp-lg) 0; }
+.reviews h2 { color: #fff; }
 .reviews blockquote { font-style: italic; padding: 1.25rem 1.5rem; border-left: 4px solid var(--clr-primary); background: #fff; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
 .reviews cite { display: block; margin-top: .5rem; text-align: right; font-weight: 700; color: #395b8c; }
 
-/* Лицензии */
+/* Reviews parallax background */
+.reviews-parallax {
+  background: url("images/hero-bg.jpg") center/cover no-repeat;
+  background-attachment: scroll;
+  background-position: center 20%;
+  position: relative;
+}
+.reviews-parallax::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.10);
+}
+.reviews-parallax .container { position: relative; z-index: 1; }
+
+/* Reviews carousel */
+.reviews-carousel { position: relative; overflow: hidden; margin-top: var(--sp-md); }
+.carousel-track { display: flex; transition: transform .55s ease; will-change: transform; }
+.review-slide { flex: 0 0 100%; display: grid; place-items: center; padding: var(--sp-sm) 0; }
+.review-card {
+  width: min(96%, 780px);
+  background: #fff;
+  color: #1f2b2a;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.1rem 1.25rem;
+}
+.review-header { display: flex; align-items: center; gap: .9rem; position: relative; }
+.avatar {
+  width: 54px; height: 54px; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 800; color: #fff;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+}
+.avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+.review-header .meta { line-height: 1.2; }
+.review-header .name-city { font-weight: 800; letter-spacing: .2px; }
+.review-header .date { font-size: .85rem; color: #51626b; margin-top: .1rem; }
+.badge-verified { display: inline-block; font-size: .72rem; color: #16a34a; border: 1px solid #16a34a; border-radius: 999px; padding: .05rem .4rem; margin-left: .4rem; vertical-align: middle; }
+.video-badge { position: absolute; right: .2rem; top: .2rem; font-size: .9rem; background: rgba(0,0,0,.55); color: #fff; border-radius: 999px; padding: .15rem .4rem; }
+.stars { margin-top: .5rem; font-size: 1rem; color: #ffb400; letter-spacing: .15rem; }
+.highlight { margin: .6rem 0 .4rem; font-weight: 600; }
+.fulltext { color: #2b3a39; }
+.link-toggle { background: none; border: none; color: var(--clr-primary); font-weight: 700; padding: 0; cursor: pointer; }
+.link-toggle:hover, .link-toggle:focus { text-decoration: underline; }
+
+.carousel-nav { position: absolute; inset: 0; pointer-events: none; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: auto; border: 1px solid rgba(255,255,255,.65); color: #fff; background: rgba(0,0,0,.35); width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; backdrop-filter: blur(2px); }
+.carousel-btn:hover { background: rgba(0,0,0,.5); }
+.carousel-btn.prev { left: var(--sp-sm); }
+.carousel-btn.next { right: var(--sp-sm); }
+
+.carousel-dots { display: flex; justify-content: center; gap: .4rem; margin-top: .6rem; }
+.carousel-dots button { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.55); cursor: pointer; }
+.carousel-dots button[aria-current="true"] { background: #fff; }
+
+@media (min-width: 768px) {
+  .review-card { padding: 1.25rem 1.5rem; }
+}
+
+/* Licenses */
 .license-grid { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 .license-grid img { max-width: 200px; border: 1px solid var(--clr-border); border-radius: var(--radius-sm); }
 
-/* Контакты */
+/* Contacts */
 .contact-form { display: flex; flex-direction: column; gap: 1rem; }
 .form-field { display: grid; gap: .4rem; }
 .form-field label { font-size: .9rem; color: #4a5d59; }
@@ -211,7 +270,7 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
 .contact-form textarea { min-height: 92px; resize: vertical; }
 .contact-form button { align-self: flex-start; }
 
-/* Карта */
+/* Map */
 .map iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -220,11 +279,11 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
   border-radius: var(--radius-sm);
 }
 
-/* Подвал */
+/* Footer */
 .site-footer { background: var(--clr-primary); color: var(--clr-light); text-align: center; padding: 1rem 0; }
 .site-footer p { margin: 0; font-size: .95rem; }
 
-/* Анимация появления с учётом предпочтений пользователя */
+/* Reveal animation respecting user preferences */
 .fade-in { opacity: 0; transform: translateY(18px); animation: fadeInUp .8s forwards; }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
@@ -232,27 +291,19 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
   .fade-in { opacity: 1; transform: none; }
 }
 
-/* Фон для блока с процедурами */
-.procedures-parallax {
-  background: url("images/procedures-bg.jpg") center/cover no-repeat;
-  /* По умолчанию фон прокручивается */
-  background-attachment: scroll; background-position: center 20%; width: 100%;
-  color: var(--clr-light); text-align: center; padding: clamp(4rem, 8vw, 6rem) 0; position: relative; overflow: hidden;
-}
-.procedures-parallax::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.12); }
-.procedures-parallax .container { position: relative; z-index: 1; }
-.procedures-parallax .container h2 { color: var(--clr-light); }
+/* .procedures-parallax removed (section no longer used) */
 
-/* На больших экранах возвращаем fixed */
+/* Use fixed on large screens */
 @media (min-width: 1024px) {
   .hero { background-attachment: fixed; }
-  .procedures-parallax { background-attachment: fixed; }
+  /* .procedures-parallax removed */
+  .reviews-parallax { background-attachment: fixed; }
 }
-@media (max-width: 768px) { .procedures-parallax { background-attachment: scroll; } }
+@media (max-width: 768px) { .reviews-parallax { background-attachment: scroll; } }
 
-/* Подсветка для активных элементов */
+/* Focus/active highlight */
 a, button, input, textarea { outline-offset: 2px; }
 :focus-visible { outline: 3px solid var(--clr-accent); }
 
-/* Центрируем логотип, если меню нет */
+/* Center the logo when nav is hidden */
 .header-inner.logo-center { justify-content: center; }
