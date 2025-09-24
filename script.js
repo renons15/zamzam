@@ -141,4 +141,57 @@
     setIndex(0);
     startAuto();
   }
+
+  // Rooms: hover-to-play media handling
+  const mediaWrappers = Array.from(document.querySelectorAll('.media-hover'));
+  if (mediaWrappers.length) {
+    const hoverQuery = window.matchMedia('(hover: hover)');
+    const finePointerQuery = window.matchMedia('(pointer: fine)');
+    const supportsHover = hoverQuery.matches && finePointerQuery.matches;
+
+    mediaWrappers.forEach((wrapper) => {
+      const video = wrapper.querySelector('video');
+      if (!video) return;
+
+      const showVideo = () => {
+        if (wrapper.classList.contains('is-active')) return;
+        wrapper.classList.add('is-active');
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {
+            // Autoplay might be blocked on some devices; rollback visual state.
+            video.pause();
+            try {
+              video.currentTime = 0;
+            } catch (_) {/* noop */}
+            wrapper.classList.remove('is-active');
+          });
+        }
+      };
+
+      const resetVideo = () => {
+        if (!wrapper.classList.contains('is-active')) return;
+        video.pause();
+        try {
+          video.currentTime = 0;
+        } catch (_) {
+          /* Some browsers throw if media isn't seekable yet; ignore. */
+        }
+        wrapper.classList.remove('is-active');
+      };
+
+      if (supportsHover) {
+        wrapper.addEventListener('mouseenter', showVideo);
+        wrapper.addEventListener('mouseleave', resetVideo);
+      } else {
+        wrapper.addEventListener('click', (event) => {
+          event.preventDefault();
+          if (wrapper.classList.contains('is-active')) resetVideo();
+          else showVideo();
+        });
+      }
+
+      video.addEventListener('ended', resetVideo);
+    });
+  }
 })();
