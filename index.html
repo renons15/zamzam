@@ -41,7 +41,6 @@
 
         <nav class="main-nav" id="nav" aria-label="Главное меню">
           <ul>
-            <li><a href="#about">О центре</a></li>
             <li><a href="#reviews">Отзывы</a></li>
             <li><a href="contact.html">Контакты</a></li>
           </ul>
@@ -96,19 +95,19 @@
               </a>
             </li>
             <li class="feature-item">
-              <a href="#nutrition">
+              <a href="indications.html">
+                <picture>
+                  <img src="images/indications.png" alt="Показания" loading="lazy" />
+                </picture>
+                <h3>Показания</h3>
+              </a>
+            </li>
+            <li class="feature-item">
+              <a href="nutrition.html">
                 <picture>
                   <img src="images/nutrition.png" alt="Питание" loading="lazy" />
                 </picture>
                 <h3>Питание</h3>
-              </a>
-            </li>
-            <li class="feature-item">
-              <a href="#water">
-                <picture>
-                  <img src="images/water.png" alt="Минеральная вода" loading="lazy" />
-                </picture>
-                <h3>Мин. воды</h3>
               </a>
             </li>
             <li class="feature-item">
@@ -417,16 +416,25 @@
           </form>
 
           <div class="contact-info fade-in">
-            <h3>Телефоны</h3>
-            <p>
-              <a href="tel:+998983074010">+998&nbsp;98&nbsp;307&nbsp;40&nbsp;10</a> (Узб.)<br />
-              <a href="tel:+998909829871">+998&nbsp;90&nbsp;982&nbsp;98&nbsp;71</a> (иностр.)
-            </p>
-
-            <h3>Адрес</h3>
-            <address>
-              Ташкентская обл., Зангиатинский р-н, пгт Уртааул, ул. Навои, 70
-            </address>
+            <ul class="contact-info__list" role="list">
+              <li class="contact-info__card" aria-label="Телефоны">
+                <span class="contact-info__icon" aria-hidden="true">☎</span>
+                <h3>Телефоны</h3>
+                <p class="contact-info__content">
+                  <a href="tel:+998983074010">+998&nbsp;98&nbsp;307&nbsp;40&nbsp;10</a><br />
+                  <a href="tel:+998909829871">+998&nbsp;90&nbsp;982&nbsp;98&nbsp;71</a>
+                </p>
+                <span class="contact-info__note">Ответим с 08:00 до 22:00</span>
+              </li>
+              <li class="contact-info__card" aria-label="Адрес">
+                <span class="contact-info__icon" aria-hidden="true">📍</span>
+                <h3>Адрес</h3>
+                <address class="contact-info__content">
+                  Ташкентская обл., Зангиатинский р-н, пгт Уртааул, ул. Навои, 70
+                </address>
+                <span class="contact-info__note">Для визита оформим пропуск заранее</span>
+              </li>
+            </ul>
 
             <div class="map">
               <iframe

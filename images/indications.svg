@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Показания к лечению</title>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b2dd" />
+      <stop offset="100%" stop-color="#005aa7" />
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="60" fill="url(#grad)" opacity="0.15" />
+  <rect x="38" y="28" width="52" height="72" rx="16" fill="#fff" stroke="#005aa7" stroke-width="4" />
+  <path d="M64 40a12 12 0 1 1-12 12A12 12 0 0 1 64 40z" fill="#005aa7" opacity="0.85" />
+  <path d="M64 66c-11.05 0-20 8.95-20 20v6h40v-6c0-11.05-8.95-20-20-20z" fill="#00b2dd" opacity="0.75" />
+  <path d="M58 82h-6v6h6v6h6v-6h6v-6h-6v-6h-6z" fill="#fff" />
+</svg>
