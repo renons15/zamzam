@@ -41,6 +41,73 @@
     }
   });
 
+  // Keep paired pricing tables vertically aligned on desktop
+  const pricingLayout = document.querySelector('.pricing-layout');
+  if (pricingLayout) {
+    const desktopMq = window.matchMedia('(min-width: 768px)');
+
+    const resetHeights = (cards) => {
+      cards.forEach((card) => {
+        const headerEl = card.querySelector('header');
+        if (headerEl) headerEl.style.minHeight = '';
+        card.querySelectorAll('.price-category').forEach((category) => {
+          category.style.minHeight = '';
+        });
+      });
+    };
+
+    const alignPricingColumns = () => {
+      const cards = Array.from(pricingLayout.querySelectorAll('.pricing-card'));
+      if (cards.length < 2) {
+        resetHeights(cards);
+        return;
+      }
+
+      resetHeights(cards);
+      if (!desktopMq.matches) return;
+
+      const headers = cards.map((card) => card.querySelector('header')).filter(Boolean);
+      if (headers.length) {
+        const tallestHeader = Math.max(...headers.map((header) => header.offsetHeight));
+        headers.forEach((header) => {
+          header.style.minHeight = `${tallestHeader}px`;
+        });
+      }
+
+      const groupedCategories = [];
+      cards.forEach((card, cardIdx) => {
+        const categories = Array.from(card.querySelectorAll('.price-category'));
+        categories.forEach((category, catIdx) => {
+          if (!groupedCategories[catIdx]) groupedCategories[catIdx] = [];
+          groupedCategories[catIdx][cardIdx] = category;
+        });
+      });
+
+      groupedCategories.forEach((group) => {
+        if (!group || !group.length) return;
+        const tallestCategory = Math.max(...group.map((category) => category.offsetHeight));
+        group.forEach((category) => {
+          if (category) category.style.minHeight = `${tallestCategory}px`;
+        });
+      });
+    };
+
+    let alignRaf = 0;
+    const scheduleAlign = () => {
+      if (alignRaf) cancelAnimationFrame(alignRaf);
+      alignRaf = requestAnimationFrame(() => {
+        alignRaf = 0;
+        alignPricingColumns();
+      });
+    };
+
+    scheduleAlign();
+    window.addEventListener('load', scheduleAlign);
+    window.addEventListener('resize', scheduleAlign);
+    if (typeof desktopMq.addEventListener === 'function') desktopMq.addEventListener('change', scheduleAlign);
+    else if (typeof desktopMq.addListener === 'function') desktopMq.addListener(scheduleAlign);
+  }
+
   // Expand/collapse toggles for long content
   const onToggleClick = (btn) => {
     const targetSel = btn.getAttribute('data-expand-target');
