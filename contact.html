@@ -41,7 +41,7 @@
         <nav class="main-nav" id="nav" aria-label="Главное меню">
           <ul>
             <li><a href="index.html#reviews">Отзывы</a></li>
-            <li><a href="pricing.html">Прайс</a></li>
+            <li><a href="pricing.html">Прайс лист</a></li>
             <li><a href="contact.html" class="active" aria-current="page">Контакты</a></li>
           </ul>
         </nav>
@@ -91,7 +91,7 @@
 
       <section class="contact page-contact__form" aria-labelledby="contact-form-title">
         <div class="container grid-2">
-          <form action="#" class="contact-form fade-in" method="post" novalidate>
+          <form action="#" class="contact-form contact-form--card fade-in" method="post" novalidate>
             <h2 id="contact-form-title">Напишите нам</h2>
 
             <div class="form-field">
@@ -123,16 +123,25 @@
           </form>
 
           <div class="contact-info fade-in">
-            <h3>Как добраться</h3>
-            
-              <u>Общественный транспорт: </u>
-            <br>  от метро Чиланзар - маршрутка №464
-            <br>  от Чор-су-автобус №84 
-            <br>  от Куйлюк-автобус №145
-            </p>
-
-            <h3>Часы работы ресепшн</h3>
-            <p>Ежедневно с 08:00 до 22:00 (без выходных).</p>
+            <ul class="contact-info__list" role="list">
+              <li class="contact-info__card" aria-label="Как добраться">
+                <span class="contact-info__icon" aria-hidden="true">🚍</span>
+                <h3>Как добраться</h3>
+                <p class="contact-info__content">
+                  <strong>Общественный транспорт:</strong><br />
+                  от метро Чиланзар — маршрутка №464<br />
+                  от Чор-су — автобус №84<br />
+                  от Куйлюк — автобус №145
+                </p>
+                <span class="contact-info__note">Маршруты: №464, №84, №145</span>
+              </li>
+              <li class="contact-info__card" aria-label="Часы работы ресепшн">
+                <span class="contact-info__icon" aria-hidden="true">🕒</span>
+                <h3>Часы работы ресепшн</h3>
+                <p class="contact-info__content">Ежедневно с 08:00 до 22:00</p>
+                <span class="contact-info__note">Работаем без выходных</span>
+              </li>
+            </ul>
 
             <div class="map">
               <iframe
@@ -171,8 +180,7 @@
 
     <footer class="site-footer" role="contentinfo">
       <div class="container footer-inner">
-        <p>© Zangiota Zam-Zam, 2024. Все права защищены.</p>
-        <a class="footer-link" href="contact.html" aria-current="page">Оставить заявку</a>
+        <p>Copyright © 2013 - 2025 Zangiota “Zam Zam”</p>
       </div>
     </footer>
 
