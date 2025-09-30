@@ -629,7 +629,90 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
 
 .page-contact__form { padding: clamp(2.5rem, 7vw, 4.5rem) 0; }
 
-.procedure-group { padding: clamp(2.5rem, 7vw, 4.5rem) 0; }
+.procedure-highlights {
+  padding: clamp(2.4rem, 6vw, 4.3rem) 0;
+  background: linear-gradient(135deg, rgba(0, 90, 167, .05), rgba(0, 178, 221, .1));
+}
+.highlight-header {
+  max-width: 720px;
+  margin: 0 auto var(--sp-md);
+  text-align: center;
+  display: grid;
+  gap: .6rem;
+}
+.highlight-header p { margin: 0; }
+.highlight-header p:not(.eyebrow) { color: #3f5162; }
+.highlight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-sm);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.highlight-card {
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid rgba(219, 229, 241, .7);
+  border-radius: 20px;
+  box-shadow: 0 18px 38px rgba(8, 72, 120, .08);
+  padding: clamp(1.4rem, 3vw, 1.9rem);
+  display: grid;
+  gap: .75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.highlight-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(0, 178, 221, .18), transparent 45%);
+  opacity: .65;
+  pointer-events: none;
+}
+.highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(8, 72, 120, .12);
+}
+.highlight-card h3 {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  color: var(--clr-primary);
+  font-size: 1.1rem;
+}
+.highlight-card p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  color: #445465;
+  line-height: 1.55;
+}
+.highlight-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 90, 167, .14), rgba(0, 178, 221, .24));
+  color: var(--clr-primary);
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.procedure-group { padding: clamp(2.5rem, 7vw, 4.5rem) 0; position: relative; overflow: hidden; }
+.procedure-group::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(0, 90, 167, .08), transparent 46%),
+    radial-gradient(circle at 88% 20%, rgba(0, 178, 221, .06), transparent 40%);
+  opacity: .5;
+  pointer-events: none;
+}
+.procedure-group .container { position: relative; z-index: 1; }
 .group-header {
   max-width: 720px;
   margin: 0 auto var(--sp-md);
@@ -652,20 +735,21 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
   gap: var(--sp-sm);
 }
 .procedure-item {
-  background: #fff;
-  border: 1px solid var(--clr-border);
-  border-left: 4px solid rgba(0, 90, 167, .55);
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(219, 229, 241, .75);
+  border-left: 4px solid rgba(0, 90, 167, .38);
   border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
   display: flex;
   flex-direction: column;
   gap: .45rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 14px 30px rgba(7, 53, 89, .08);
+  backdrop-filter: blur(8px);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 .procedure-item:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(7, 53, 89, .12);
 }
 .item-title {
   font-weight: 700;
@@ -752,6 +836,11 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
     justify-items: start;
   }
   .group-header p { max-width: 580px; }
+  .highlight-header {
+    text-align: left;
+    justify-items: start;
+  }
+  .highlight-card { padding: 1.8rem 2.1rem; }
   .note-card {
     text-align: left;
     justify-items: start;
@@ -778,8 +867,9 @@ h2 { text-align: center; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: var
   }
   .footer-inner {
     flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
   }
 }
 
